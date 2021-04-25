@@ -48,12 +48,6 @@ pla none - pull from stack to Acc
 brk none - stops programm
 clr none - clears Reg and Acc
 """
-
-
-#please not that this is a system accurat interpreter and is NOT compatible with other S1monsAssembly3 programm
-#this version is specially made of the compiler rewrite
-
-#also stringcall takes form acc not mem 14
  
 class _Error(Exception):
     def __init__(self, error):
