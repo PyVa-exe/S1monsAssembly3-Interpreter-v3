@@ -47,7 +47,13 @@ pla none - pull from stack to Acc
 
 brk none - stops programm
 clr none - clears Reg and Acc
+
+putstr none - print the Acc as ascii
 """
+
+
+#please not that this is a system accurat interpreter and is NOT compatible with other S1monsAssembly3 programm
+#this version is specially made of the compiler rewrite
  
 class _Error(Exception):
     def __init__(self, error):
@@ -261,16 +267,9 @@ class cMain:
                     if len(self.xStack) != 0:
                         self.xAcc.Set(int(self.xStack.pop()))
                 
-                elif xInst.lower() == "stringcall":
-                    self.xString += chr(int(self.xAcc))
+                elif xInst == "putstr":
+                    print(chr(int(self.xAcc)), end = "")
                 
-                elif xInst.lower() == "stringprint":
-                    if self.xScreenMode == "O":
-                        print(self.xString)
-                
-                elif xInst.lower() == "stringclear":
-                    self.xString = ""
-
                                 
                 self.xProgrammIndex += 1
                 self.xTotalIndex += 1
