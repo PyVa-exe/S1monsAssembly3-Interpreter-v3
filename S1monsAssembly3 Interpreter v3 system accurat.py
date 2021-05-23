@@ -268,7 +268,7 @@ class cMain:
                         self.xAcc.Set(int(self.xStack.pop()))
                 
                 elif xInst == "putstr":
-                    print(chr(int(self.xAcc)), end = "")
+                    print(chr(int(self.xAcc)), end = "", flush = True)
                 
                                 
                 self.xProgrammIndex += 1
